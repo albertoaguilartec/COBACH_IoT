@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "author": "Alberto Aguilar",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "arduino-community" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 25.2,
+      "left": -82.6,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -32.4,
+      "left": -82.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 73.2,
+      "left": -82.6,
+      "attrs": { "color": "limegreen" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "led2:C", "pico:GND.1", "green", [ "v0" ] ],
+    [ "led2:A", "pico:GP1", "green", [ "v0" ] ],
+    [ "led1:A", "pico:GP5", "green", [ "v0" ] ],
+    [ "led1:C", "pico:GND.2", "green", [ "v0" ] ],
+    [ "led3:A", "pico:GP9", "green", [ "v0" ] ],
+    [ "led3:C", "pico:GND.3", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
